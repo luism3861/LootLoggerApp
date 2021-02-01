@@ -17,6 +17,7 @@
 		F827F712255A3A1300AB728C /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827F711255A3A1300AB728C /* ItemsViewController.swift */; };
 		F84BB82F255B90CE00988843 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BB82E255B90CE00988843 /* Item.swift */; };
 		F84BB834255B99C700988843 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BB833255B99C700988843 /* ItemStore.swift */; };
+		F8B6FFA525A222A800DF7982 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B6FFA425A222A800DF7982 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F827F711255A3A1300AB728C /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		F84BB82E255B90CE00988843 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F84BB833255B99C700988843 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		F8B6FFA425A222A800DF7982 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				F827F711255A3A1300AB728C /* ItemsViewController.swift */,
 				F84BB82E255B90CE00988843 /* Item.swift */,
 				F84BB833255B99C700988843 /* ItemStore.swift */,
+				F8B6FFA425A222A800DF7982 /* ItemCell.swift */,
 			);
 			path = LootLogger;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				F84BB82F255B90CE00988843 /* Item.swift in Sources */,
 				F827F712255A3A1300AB728C /* ItemsViewController.swift in Sources */,
+				F8B6FFA525A222A800DF7982 /* ItemCell.swift in Sources */,
 				F827F6DF255A38B600AB728C /* AppDelegate.swift in Sources */,
 				F84BB834255B99C700988843 /* ItemStore.swift in Sources */,
 				F827F6E1255A38B600AB728C /* SceneDelegate.swift in Sources */,

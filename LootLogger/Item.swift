@@ -30,14 +30,14 @@ class Item: Equatable{
     
     
     convenience init(random: Bool = false){
-        if random {
+        if random == true {
             let adjectives = ["Fluffy","Rusty","Shiny"]
             let nouns = ["Bear","Spork","Mac"]
             
             let randomAdjective = adjectives.randomElement()!
             let randomNoun = nouns.randomElement()!
             
-            let randomName = "\(randomAdjective) \(randomNoun)  "
+            let randomName = "\(randomAdjective) \(randomNoun)"
             let randomValue = Int.random(in: 0..<100)
             let randomSerialNumber = UUID().uuidString.components(separatedBy: "-").first!
             
