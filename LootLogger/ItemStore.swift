@@ -20,12 +20,8 @@ class ItemStore {
         if fromIndex == toIndex{
             return
         }
-        
-        
         let movedItem = allItems[fromIndex]
-        
         allItems.remove(at: fromIndex)
-        
         allItems.insert(movedItem,at:toIndex)
     }
     
