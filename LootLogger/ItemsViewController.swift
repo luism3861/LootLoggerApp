@@ -14,9 +14,7 @@ class ItemsViewController: UITableViewController {
         let newItem = itemStore.createItem()
         if let index = itemStore.allItems.firstIndex(of: newItem){
             let indexPath = IndexPath(row:index,section:0)
-            
             tableView.insertRows(at: [indexPath], with: .automatic)
-            
         }
     }   
     
@@ -32,7 +30,17 @@ class ItemsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 65    
+        tableView.rowHeight = 65
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Home"
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView,
@@ -65,27 +73,12 @@ class ItemsViewController: UITableViewController {
         
         let item = itemStore.allItems[indexPath.row]
         
+        
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "$\(item.valueInDollars)"
-
-        if item.valueInDollars <= 50 {
-            cell.valueLabel.textColor = hexStringToUIColor(hex: "#e83120")
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        }else{
-            cell.valueLabel.textColor = hexStringToUIColor(hex: "#04bf1d")
-            
-        }
+        cell.valueLabel.textColor = hexStringToUIColor(hex: "#089c65")
+    
         cell.updateConstraintsIfNeeded()
 
         return cell
@@ -95,10 +88,24 @@ class ItemsViewController: UITableViewController {
         return UITableView.automaticDimension
     }
     
+    override func prepare(for segue: UIStoryboardSegue,sender: Any?){
+        switch segue.identifier{
+        case "showItem":
+            
+            if let row  = tableView.indexPathForSelectedRow?.row{
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destination as! DetailViewControlller
+                detailViewController.item = item
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
+
     
     
     func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var cString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
         if (cString.hasPrefix("#")) {
             cString.remove(at: cString.startIndex)

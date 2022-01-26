@@ -9,7 +9,7 @@ import UIKit
 
 
 class Item: Equatable{
-    var name:  String
+    var name: String
     var valueInDollars: Int
     var serialNumber: String?
     let dateCreated: Date
@@ -36,7 +36,7 @@ class Item: Equatable{
             
             let randomAdjective = adjectives.randomElement()!
             let randomNoun = nouns.randomElement()!
-
+            
             let randomName = "\(randomAdjective) \(randomNoun)"
             let randomValue = Int.random(in: 0..<100)
             let randomSerialNumber = UUID().uuidString.components(separatedBy: "-").first!
